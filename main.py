@@ -10,9 +10,9 @@ def read_root():
 
 @app.get("/app/health/readiness")
 def readiness():
-    return {"status": "ready"}
+    return {"status": "UP"}
 
 
 @app.get("/app/health/liveness")
 def liveness():
-    return {"status": "live"}
+    return {"status": "UP"}
