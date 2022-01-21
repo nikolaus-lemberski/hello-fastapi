@@ -20,18 +20,18 @@ Hello World with Python and FastAPI
 
 -> in containers section under "resources", add:
 ```yaml
-        readinessProbe:
-          initialDelaySeconds: 10
-          timeoutSeconds: 2
-          httpGet:
-            path: /app/health/readiness
-            port: 8080
-        livenessProbe:
-          initialDelaySeconds: 10
-          periodSeconds: 2
-          httpGet:
-            path: /app/health/liveness
-            port: 8080
+readinessProbe:
+    initialDelaySeconds: 10
+    timeoutSeconds: 2
+    httpGet:
+    path: /app/health/readiness
+    port: 8080
+livenessProbe:
+    initialDelaySeconds: 10
+    periodSeconds: 2
+    httpGet:
+    path: /app/health/liveness
+    port: 8080
 ```
 
 
