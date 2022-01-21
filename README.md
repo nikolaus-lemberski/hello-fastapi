@@ -33,7 +33,7 @@ livenessProbe:
     path: /app/health/liveness
     port: 8080
 ```
-(or go via OpenShift web console)
+(or add via OpenShift web console)
 
 
 
