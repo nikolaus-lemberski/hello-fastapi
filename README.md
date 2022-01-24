@@ -2,7 +2,19 @@
 
 Hello World with Python and FastAPI
 
+## Setup
+
+```
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
 ## Start commands
+
+... tests
+
+`pytest`
 
 ... development
 
