@@ -30,7 +30,7 @@ jobs:
             ${{ runner.os }}-venv-
 
       - name: Install dependencies into venv
-        run: python -m venv venv && source venv/bin/activate && pip3 install -r requirements-txt
+        run: python -m venv venv && source venv/bin/activate && pip3 install -r requirements.txt
         if: steps.cache-venv.outputs.cache-hit != 'true'
 
       - name: Run tests in venv
