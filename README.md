@@ -33,7 +33,7 @@ pip install -r requirements.txt
 ### Set health probes
 
 `oc set probe deployment hello-fastapi --readiness --get-url=http://:8080/app/health/readiness --initial-delay-seconds=10 --period=5`
-`oc set probe deployment hello-fastapi --liveness --get-url=http://:8080/app/health/readiness --initial-delay-seconds=10 --period=5`
+`oc set probe deployment hello-fastapi --liveness --get-url=http://:8080/app/health/liveness --initial-delay-seconds=10 --period=5`
 
 
 
