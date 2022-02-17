@@ -26,26 +26,15 @@ pip install -r requirements.txt
 
 ## OpenShift deploy
 
+### Deploy the app
+
 `oc new-app python:3.9-ubi8~https://github.com/nikolaus-lemberski/hello-fastapi.git --name=hello-fastapi --strategy=source`
 
-`oc edit deployment hello-fastapi`
+### Set health probes
 
--> in containers section under "resources", add:
-```yaml
-readinessProbe:
-    initialDelaySeconds: 10
-    timeoutSeconds: 2
-    httpGet:
-    path: /app/health/readiness
-    port: 8080
-livenessProbe:
-    initialDelaySeconds: 10
-    periodSeconds: 2
-    httpGet:
-    path: /app/health/liveness
-    port: 8080
-```
-(or add via OpenShift web console)
+`oc set probe deployment hello-fastapi --readiness --get-url=http://:8080/app/health/readiness --initial-delay-seconds=10 --period=5`
+`oc set probe deployment hello-fastapi --liveness --get-url=http://:8080/app/health/readiness --initial-delay-seconds=10 --period=5`
+
 
 
 
