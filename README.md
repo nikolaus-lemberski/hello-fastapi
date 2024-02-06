@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 ### Deploy the app
 
-`oc new-app python:3.9-ubi8~https://github.com/nikolaus-lemberski/hello-fastapi.git --name=hello-fastapi --strategy=source`
+`oc new-app python:3.11~https://github.com/nikolaus-lemberski/hello-fastapi.git --name=hello-fastapi --strategy=source`
 
 ### Set health probes
 
